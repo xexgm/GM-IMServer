@@ -57,6 +57,7 @@ CREATE TABLE group_info
     id       BIGINT AUTO_INCREMENT PRIMARY KEY COMMENT '自增群ID',
     name     VARCHAR(50) NOT NULL COMMENT '群名称',
     owner_id BIGINT      NOT NULL COMMENT '群主ID',
+    tag_id   INT         NOT NULL default -1 COMMENT '标签ID,-1表示没有标签优化',
     INDEX    idx_owner (owner_id)
 ) ENGINE = InnoDB
 DEFAULT CHARSET = utf8mb4

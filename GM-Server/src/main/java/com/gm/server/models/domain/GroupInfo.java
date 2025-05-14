@@ -1,11 +1,9 @@
-package com.gm.gmserver.models;
+package com.gm.server.models.domain;
 
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
-
-import java.util.Date;
 
 /**
  * @Author: hhj023
@@ -13,19 +11,15 @@ import java.util.Date;
  * @Description:
  */
 @Data
-@TableName("group_chat_relation")
-public class GroupMember {
+@TableName("group_info")
+public class GroupInfo {
 
     @TableId(type = IdType.AUTO)
     private Long id;
 
-    private Long groupId;
+    private String name;
 
-    private Long userId;
+    private Long ownerId;
 
-    private String userNickName;
-
-    private Integer quit;
-
-    private Date quitTime;
+    private Integer tagId;
 }

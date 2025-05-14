@@ -1,0 +1,45 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /api
+
+spring:
+  kafka:
+    bootstrap-servers:  # Kafka 服务器地址
+    consumer:
+      group-id: gm-server-group       # 消费者组 ID
+      auto-offset-reset: earliest     # 从最早的消息开始消费
+      max-poll-records: 100  # 单次拉取最大消息数
+      fetch-min-size: 1024  # 最小拉取数据量
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+      #  jdbc:mysql://{mysql host}:{mysql port}/{database}
+    url: jdbc:mysql://localhost:3306/gm_im_db?useUnicode=true&characterEncoding=utf8&serverTimezone=UTC&autoReconnect=true&serverTimezone=GMT%2b8
+      # mysql username
+    username: root
+      # mysql password
+    password: 12345678
+    hikari:
+      maximum-pool-size: 100
+      connection-timeout: 30000
+
+mybatis-plus:
+  configuration:
+    map-underscore-to-camel-case: true
+
+logging:
+  level:
+    com.gm.server: debug
+
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html   # Swagger UI 访问路径
+    tags-sorter: alpha       # 接口按字母顺序排序
+    operations-sorter: alpha
+  api-docs:
+    path: /v3/api-docs       # OpenAPI 描述文件路径
+  default-produces-media-type: application/json  # 默认响应格式
+

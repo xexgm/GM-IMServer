@@ -1,4 +1,4 @@
-package com.gm.gmserver.models;
+package com.gm.server.models.domain;
 
 import com.baomidou.mybatisplus.annotation.*;
 import lombok.Data;

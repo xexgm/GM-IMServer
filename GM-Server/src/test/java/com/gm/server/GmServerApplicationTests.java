@@ -1,4 +1,4 @@
-package com.gm.gmserver;
+package com.gm.server;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

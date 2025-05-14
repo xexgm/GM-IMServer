@@ -1,4 +1,4 @@
-package com.gm.gmserver;
+package com.gm.server;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
