@@ -5,14 +5,14 @@ server:
 
 spring:
   kafka:
-    bootstrap-servers:  # Kafka 服务器地址
+    bootstrap-servers:  # Kafka 服务器地址 必填
     consumer:
-      group-id: gm-server-group       # 消费者组 ID
+#      group-id: gm-server-group       # 消费者组 ID
       auto-offset-reset: earliest     # 从最早的消息开始消费
       max-poll-records: 100  # 单次拉取最大消息数
-      fetch-min-size: 1024  # 最小拉取数据量
-      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
-      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+#      fetch-min-size: 1024  # 最小拉取数据量
+#      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+#      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
 
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
@@ -25,6 +25,19 @@ spring:
     hikari:
       maximum-pool-size: 100
       connection-timeout: 30000
+
+  data:
+    redis:
+      host:         # redis服务器地址
+      port: 6379
+      password:     #密码，没有则留空
+      database: 0
+      lettuce:
+        pool:
+          max-active: 100
+          max-idle: 10
+          min-idle: 5
+          max-wait: 1000
 
 mybatis-plus:
   configuration:

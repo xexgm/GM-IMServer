@@ -17,6 +17,12 @@
         <java.version>17</java.version>
     </properties>
     <dependencies>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-redis</artifactId>
+            <version>2.5.6</version>
+        </dependency>
             <!--依赖 Mybatis-Plus-->
         <dependency>
             <groupId>com.baomidou</groupId>
@@ -30,7 +36,18 @@
         </dependency>
 
     </dependencies>
-
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>8</source>
+                    <target>8</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 
 
 </project>
